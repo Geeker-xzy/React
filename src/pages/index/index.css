@@ -1,0 +1,56 @@
+#root{
+    height: 100%;
+}
+body{
+    margin: 0;
+    }
+.main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.main .header{
+    height: 46px;
+    padding-top: 1px;
+    line-height: 44px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: Microsoft YaHei;
+    /* text-align: center; */
+    /* color: white; */
+    /* background-color: #222; */
+    /* border-color: #080808; */
+}
+.logo{
+    height: calc(100% - 10px);
+    margin: 5px 4px;
+    display: inline;
+    float: left;
+}
+.subTitle{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 100;
+}
+.title{
+    padding-right: 10px;
+}
+.activeTitle{
+    padding: 2px 4px;
+    font-weight: 100;
+    opacity: .8;
+    border: 1px solid #0073ea;
+    background: #0073ea;
+    margin-left: 10px;
+    /* font-weight: normal; */
+    color: #fff;
+}
+.ant-tabs{
+    float: left;
+}
+.ant-tabs-nav .ant-tabs-tab{
+    margin: 0 0 0 0;
+}
