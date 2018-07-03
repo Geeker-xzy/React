@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route} from 'react-router-dom';
-import asyncComponent from '../utils/asyncComponent';
+// import asyncComponent from '../utils/asyncComponent';
 
 import index from "../pages/index/index";
 // const price = asyncComponent(() => import("../pages/price/price"));

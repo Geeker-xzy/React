@@ -1,7 +1,8 @@
+// 即期表格
 import React, { Component } from 'react'
 import { Table } from 'antd';
 import axios from 'axios';
-
+// 列名
 const columns = [{
     title: '货币对',
     dataIndex: 'cyPairCode',
@@ -10,7 +11,7 @@ const columns = [{
 }, {
     title: '报价单位',
     className: 'column-money',
-    dataIndex: 'feedCode',
+    dataIndex: 'quoteUnit',
     align: 'center'
 }, {
     title: '买价',
@@ -33,6 +34,11 @@ const columns = [{
     align: 'center'
 },
 {
+    title:'起息日',
+    dataIndex:'valuedate',
+    align: 'center'
+},
+{
     title: '更新日期',
     dataIndex: 'updateDate',
     align: 'center'
@@ -49,7 +55,7 @@ let data = [
     {
         key: '1',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -60,7 +66,7 @@ let data = [
     {
         key: '2',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -71,7 +77,7 @@ let data = [
     {
         key: '3',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -82,7 +88,7 @@ let data = [
     {
         key: '4',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -93,7 +99,7 @@ let data = [
     {
         key: '5',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -104,7 +110,7 @@ let data = [
     {
         key: '6',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -115,7 +121,7 @@ let data = [
     {
         key: '7',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -126,7 +132,7 @@ let data = [
     {
         key: '8',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -137,7 +143,7 @@ let data = [
     {
         key: '9',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -148,7 +154,7 @@ let data = [
     {
         key: '10',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -159,7 +165,7 @@ let data = [
     {
         key: '11',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -170,7 +176,7 @@ let data = [
     {
         key: '12',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -181,7 +187,7 @@ let data = [
     {
         key: '13',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -192,7 +198,7 @@ let data = [
     {
         key: '14',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -203,7 +209,7 @@ let data = [
     {
         key: '15',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -214,7 +220,7 @@ let data = [
     {
         key: '16',
         cyPairCode: 'AUDUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',
@@ -225,7 +231,7 @@ let data = [
     {
         key: '17',
         cyPairCode: 'AUDCNY',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '2.23',
         ask: '2.34',
         mid: '1.87',
@@ -236,7 +242,7 @@ let data = [
     {
         key: '18',
         cyPairCode: 'CADUSD',
-        feedCode: 'RMDS',
+        quoteUnit: '1',
         bid: '1.23',
         ask: '2.34',
         mid: '1.87',

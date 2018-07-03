@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Icon } from 'antd';
 import { Tabs } from 'antd';
-import Spot from '../Table/spot.js';
-// import { div } from 'gl-matrix/src/gl-matrix/vec4';
+import Spot from '../Table/spot';
 const TabPane = Tabs.TabPane;
 class tab extends Component {
     render() {
