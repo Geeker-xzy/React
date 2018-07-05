@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-import Spot from '../Table/spot';
-import FormLayoutDemo from '../TableForm/tableForm';
+// import Spot from '../Table/spot';
+import SpotForm from '../Form/spot';
 const TabPane = Tabs.TabPane;
-class tab extends Component {
+class SmallTab extends Component {
     render() {
         return (
-            <div className="tab-main">
+            <div className="tab-right">
+              {/* <h3>单次发价:</h3> */}
             <Tabs defaultActiveKey="1" size="small">
                 <TabPane tab="即期" key="1">
-                <FormLayoutDemo/>
-                <Spot/></TabPane>
+                <SpotForm/>
+                {/* <FormLayoutDemo/> */}
+                {/* <Spot/> */}
+                </TabPane>
                 <TabPane tab="即期带量" key="2"></TabPane>
                 <TabPane tab="即期监管" key="3">选项卡三3内容</TabPane>
                 <TabPane tab="远期带量" key="4">选项卡一4内容</TabPane>
@@ -26,4 +29,4 @@ class tab extends Component {
         )
     }
 }
-export default tab;
+export default SmallTab;

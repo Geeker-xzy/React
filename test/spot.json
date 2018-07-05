@@ -1,0 +1,43 @@
+{
+	"data": [{
+		"key": "1",
+		"cyPairCode": "AUDUSD",
+		"quoteUnit": "1",
+		"bid": "1.23",
+		"ask": "2.34",
+		"mid": "1.87",
+		"priceState": "Y",
+		"updateDate": "18-07-03",
+		"updateTime": "18:23:54"
+    },
+    {
+		"key": "2",
+		"cyPairCode": "AUDUSD",
+		"quoteUnit": "1",
+		"bid": "1.23",
+		"ask": "2.34",
+		"mid": "1.87",
+		"priceState": "Y",
+		"updateDate": "18-07-03",
+		"updateTime": "18:23:54"
+    },
+    {
+		"key": "3",
+		"cyPairCode": "AUDUSD",
+		"quoteUnit": "1",
+		"bid": "1.23",
+		"ask": "2.34",
+		"mid": "1.87",
+		"priceState": "Y",
+		"updateDate": "18-07-03",
+		"updateTime": "18:23:54"
+    }
+]
+}
+  "proxy":{
+    "/*":{
+      "target":"https://www.easy-mock.com/",
+      "secure":false,
+      "changeOrigin":true
+    }
+  }

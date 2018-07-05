@@ -8,7 +8,7 @@ class performItem extends Component {
                 <span>
                 <span>15</span>次/s
                 </span>
-                <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+                <Switch checkedChildren="开" unCheckedChildren="关" />
             </div>
         )
     }

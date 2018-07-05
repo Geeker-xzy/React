@@ -53,7 +53,7 @@ body{
 .tab-main{
     width: 70%;
     overflow: hidden;
-    /* float: left; */
+    float: left;
 }
 .ant-tabs-nav .ant-tabs-tab{
     margin: 0 5px 0 0;
@@ -62,7 +62,7 @@ body{
     padding: 6px 16px;
 }
 .ant-table-wrapper{
-    height: 539px;
+    height: 514px;
     overflow-y: auto;
 }
 ::-webkit-scrollbar-track
@@ -110,3 +110,34 @@ body{
 .perform .item >span{
     margin-right: 10px;
 }
+.ant-tabs-bar{
+    margin: 0 0 0 0;
+}
+.ant-row{
+    margin-left: 10px;
+}
+.left{
+    /* width: 70%; */
+    /* float: left; */
+}
+.tab-right{
+    width: 30%;
+    float: right;
+}
+/* .right{
+    
+} */
+.tab-right .ant-form-inline .ant-form-item{
+    
+    margin-right: 4px;
+    /* height: 20px; */
+    }
+    .tab-right .ant-form-item-control-wrapper{
+        width: 100px;
+    }
+    .tab-right .ant-input{
+        height: 25px;
+    }
+    .tab-right .ant-form-item-label{
+        width: 70px;
+    }
