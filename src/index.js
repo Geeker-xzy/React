@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-import Route from './router/';
-// import { AppContainer } from 'react-hot-loader';
+import { HashRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-const render = Component => {
+import CMHeader from './components/Header/cmHeader';
+import Tab from './components/Tab/tab';
+import Perform from './components/Perform/perform';
+import SmallTab from './components/SmallTab/smallTab';
+import Route from './router/';
+import './index.css';
+const render = (Route) => {
     ReactDOM.render(
-        //绑定redux、热加载
-        // <AppContainer>
-            <Component />
-        // </AppContainer>,
-        ,document.getElementById('root'),
+        <HashRouter>
+            <div className="main">
+                <CMHeader />
+                <Tab></Tab>
+                <Route />
+                <Perform />
+                <SmallTab />
+            </div>
+        </HashRouter>
+        , document.getElementById('root'),
     )
 }
 

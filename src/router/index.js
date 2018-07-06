@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { HashRouter, Switch, Route} from 'react-router-dom';
-// import asyncComponent from '../utils/asyncComponent';
-
-import index from "../pages/index/index";
-// const price = asyncComponent(() => import("../pages/price/price"));
+import { Switch, Route ,Redirect} from 'react-router-dom';
+import asyncComponent from '../utils/asyncComponent';
+import Spot from "../pages/spot";
+const Spotv = asyncComponent(() => import("../pages/spotv"));
 // const helpcenter = asyncComponent(() => import("@/pages/helpcenter/helpcenter"));
 // const production = asyncComponent(() => import("@/pages/production/production"));
 // const balance = asyncComponent(() => import("@/pages/balance/balance"));
@@ -12,13 +11,11 @@ import index from "../pages/index/index";
 export default class RouteConfig extends Component{
   render(){
     return(
-      <HashRouter>
         <Switch>
-          <Route path="/" exact component={index} />
-          {/* <Route path="/price" component={price} /> */}
-          {/* <Redirect to="/" /> */}
+          <Route path="/" exact component={Spot} />
+          <Route path="/spotv" component={Spotv} />
+          <Redirect to="/" />
         </Switch>
-      </HashRouter>
     )
   }
 }

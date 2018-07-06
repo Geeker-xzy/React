@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Table } from 'antd';
 import axios from 'axios';
+import TableForm from '../components/TableForm/tableForm';
 // 列名
 const columns = [{
     title: '货币对',
@@ -268,36 +269,29 @@ class Spot extends Component {
 
     render() {
         return (
+            <div className="form-main">
+            <TableForm/>
             <Table
                 columns={columns}
                 dataSource={this.state.data}
                 bordered
                 pagination={false} />
+                </div>
         )
     }
     componentDidMount() {
         this.getData();
-        setInterval(function (params) {
-            let data = this.state.data.map(function (item,i) {
-                item.ask = parseInt(item.ask) + 1
-                item.bid = parseInt(item.bid) + 1
-                item.mid = parseInt(item.mid) + 1
-                item.updateTime = new Date().getTime().toFixed(2);
-                // item.key = i;
-                // item.key = parseInt(Math.random(100))
-                return item;
-              })
-              console.log(data.length);
-            // data[0].ask = Number(data[0].ask) + 1
-            this.setState({data:data})
-            // axios({
-            //     method:'post',
-            //     url:'192.168.1.1/user/12345',
-            //     data:{
-            //         data
-            //     }
-            // });
-        }.bind(this), 1000)
+        // setInterval(function (params) {
+        //     let data = this.state.data.map(function (item,i) {
+        //         item.ask = parseInt(item.ask) + 1
+        //         item.bid = parseInt(item.bid) + 1
+        //         item.mid = parseInt(item.mid) + 1
+        //         item.updateTime = new Date().getTime().toFixed(2);
+        //         return item;
+        //       })
+        //       console.log(data.length);
+        //     this.setState({data:data})
+        // }.bind(this), 1000)
         
     }
 }

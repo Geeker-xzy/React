@@ -6,7 +6,8 @@ class performItem extends Component {
             <div className="item">
                 <label>即期:</label>
                 <span>
-                <span>15</span>次/s
+                <span>115</span>&nbsp;
+                次/s
                 </span>
                 <Switch checkedChildren="开" unCheckedChildren="关" />
             </div>

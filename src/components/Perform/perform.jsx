@@ -4,7 +4,7 @@ class Perform extends Component {
     render() {
         return (
             <div className="perform">
-            <h3>性能展示:</h3>
+            {/* <h3>性能展示:</h3> */}
             <PerformItem/>
             <PerformItem/>
             <PerformItem/>

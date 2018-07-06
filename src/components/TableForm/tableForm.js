@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Radio } from 'antd';
+import { div } from 'gl-matrix/src/gl-matrix/vec2';
 
 const FormItem = Form.Item;
 
@@ -25,7 +26,6 @@ class FormLayoutDemo extends Component {
       wrapperCol: { span: 14, offset: 4 },
     } : null;
     return (
-      <div>
         <Form layout={formLayout}>
           <FormItem
             label="发价频率"
@@ -49,7 +49,6 @@ class FormLayoutDemo extends Component {
             <Button type="primary">设置生效</Button>
           </FormItem>
         </Form>
-      </div>
     );
   }
 }

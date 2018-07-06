@@ -69,6 +69,18 @@ class SpotForm extends Component {
           >
             <Input placeholder="" />
           </FormItem>
+          <FormItem
+            label="货币对"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="买价"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
           <FormItem {...buttonItemLayout}>
             <Button type="primary">单次发价</Button>
           </FormItem>
