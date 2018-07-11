@@ -94,6 +94,13 @@ class Spot extends Component {
 
     }
 }
+const mapDispatchToProps =(dispatch)=>{
+    return{
+        initData:(data)=>{
+            dispatch(data);
+        }
+    }
+}
 const mapStateToProps = (store) => {
     console.log(store);
     return {
@@ -101,4 +108,4 @@ const mapStateToProps = (store) => {
         display:store.display,
     }
 }
-export default withRouter(connect(mapStateToProps)(Spot));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Spot));
