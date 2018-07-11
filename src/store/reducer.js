@@ -19,22 +19,23 @@ productType.forEach((item) => {
 })
 defaultState.loading = true;
 let proData = (state = defaultState, action={}) => {
+    let stateCopy = {...state};
     switch (action.type) {
         case 'initTable':
-            state.display = action.data;
-            state.loading = false;
+        stateCopy.display = action.data;
+        stateCopy.loading = false;
             // state[`productType`].item = action.data;
             break;
         case 'refresh':
-            state[`productType`].display = action.data;
+        stateCopy[`productType`].display = action.data;
             break;
         case 'loading':
-            state.loading = action.data;
+        stateCopy.loading = action.data;
             break;
         default:
             break;
     }
-    return state;
+    return stateCopy;
 }
 export default proData;
 
