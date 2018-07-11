@@ -70,8 +70,6 @@ class Spot extends Component {
         initDate({productType:"spot"})
     }
     render() {
-        // console.log('render');
-        // console.log(this.props);
         return (
             <div className="form-main">
                 <TableForm />
@@ -96,16 +94,6 @@ class Spot extends Component {
 
     }
 }
-// export default Spot;
-
-// const mapDispatchToProps = (dispatch) => {
-//     console.log(dispatch)
-//     return {
-//         addData: (text) => {
-//             dispatch({ type: 'loading', data: text })
-//         }
-//     }
-// }
 const mapStateToProps = (store) => {
     console.log(store);
     return {

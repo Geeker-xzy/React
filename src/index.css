@@ -67,7 +67,7 @@ body{
 }
 .ant-table-wrapper{
     width: 100%;
-    height: 514px;
+    height: 505px;
     float: left;
     overflow-y: auto;
 }
@@ -97,8 +97,8 @@ body{
     margin-right: 70px;
 }
 .perform{
-    width: 30%;
-    float:right;
+    width: 100%;
+    /* float:right; */
     margin-top: 5px;
     border-bottom: 1px solid #eee;
 }
@@ -122,17 +122,9 @@ body{
 .ant-row{
     margin-left: 10px;
 }
-.left{
-    /* width: 70%; */
-    /* float: left; */
-}
 .tab-right{
-    width: 30%;
-    float: right;
+    width: 100%;
 }
-/* .right{
-    
-} */
 .tab-right .ant-form-inline .ant-form-item{
     
     margin-right: 4px;
@@ -149,6 +141,7 @@ body{
     }
     .form-main{
         width: 70%;
+        height: calc(100% - 100px);
         float: left;
         position: relative;
     }
@@ -159,4 +152,9 @@ body{
         position: absolute;
         left: 50%;
         top: 40%;
+    }
+    .right{
+        float: right;
+        width: 30%;
+
     }

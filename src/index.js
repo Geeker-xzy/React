@@ -24,8 +24,10 @@ const render = (Route) => {
                     <CMHeader />
                     <Tab></Tab>
                     <Route />
+                    <div className="right">
                     <Perform />
                     <SmallTab />
+                    </div>
                 </div>
             </HashRouter>
         </Provider>
