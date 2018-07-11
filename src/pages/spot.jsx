@@ -1,8 +1,12 @@
 // 即期表格
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import { Table } from 'antd';
 import axios from 'axios';
 import TableForm from '../components/TableForm/tableForm';
+import { Spin } from 'antd';
+import { connect } from 'react-redux';
+import {initDate} from "../store/action";
 // 列名
 const columns = [{
     title: '货币对',
@@ -35,8 +39,8 @@ const columns = [{
     align: 'center'
 },
 {
-    title:'起息日',
-    dataIndex:'valuedate',
+    title: '起息日',
+    dataIndex: 'valueDate',
     align: 'center'
 },
 {
@@ -50,250 +54,63 @@ const columns = [{
     align: 'center'
 },
 
+
 ];
-
-// let data = [
-//     {
-//         key: '1',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '2',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '3',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '4',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '5',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '6',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '7',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '8',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '9',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '10',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '11',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '12',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '13',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '14',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '15',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '16',
-//         cyPairCode: 'AUDUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '17',
-//         cyPairCode: 'AUDCNY',
-//         quoteUnit: '1',
-//         bid: '2.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     },
-//     {
-//         key: '18',
-//         cyPairCode: 'CADUSD',
-//         quoteUnit: '1',
-//         bid: '1.23',
-//         ask: '2.34',
-//         mid: '1.87',
-//         priceState: 'Y',
-//         updateDate: '18-07-03',
-//         updateTime: '18:23:54'
-//     }
-// ];
-
 class Spot extends Component {
     constructor(props) {
         super(props);
-        this.state = { data:[] };
-        this.getData=this.getData.bind(this);
+        this.state = {
+            waveRange: '',
+            flag: true,
+            singleNumLimit: '',
+            display: [],
+        };
     }
-
-    getData(){
-        axios({url:'https://www.easy-mock.com/mock/5b3c97542eeb5562d4de71ff/example/query.action',method:"GET"}).then((data)=>{
-            this.setState({data:data.data.data}) 
-        })
-        
+    getData() {
+        initDate({productType:"spot"})
     }
-
     render() {
+        // console.log('render');
+        // console.log(this.props);
         return (
             <div className="form-main">
-            <TableForm/>
-            <Table
-                columns={columns}
-                dataSource={this.state.data}
-                bordered
-                pagination={false} />
+                <TableForm />
+                <div className="spinner">
+                    <Spin spinning={this.props.loading} />
                 </div>
+                <Table
+                    columns={columns}
+                    dataSource={this.props.display}
+                    bordered
+                    pagination={false} >
+                </Table>
+            </div>
         )
     }
     componentDidMount() {
-        this.getData();
-        // setInterval(function (params) {
-        //     let data = this.state.data.map(function (item,i) {
-        //         item.ask = parseInt(item.ask) + 1
-        //         item.bid = parseInt(item.bid) + 1
-        //         item.mid = parseInt(item.mid) + 1
-        //         item.updateTime = new Date().getTime().toFixed(2);
-        //         return item;
-        //       })
-        //       console.log(data.length);
-        //     this.setState({data:data})
-        // }.bind(this), 1000)
-        
+        this.getData();  
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(22222);
+        console.log(nextProps);
+
     }
 }
+// export default Spot;
 
-export default Spot;
+// const mapDispatchToProps = (dispatch) => {
+//     console.log(dispatch)
+//     return {
+//         addData: (text) => {
+//             dispatch({ type: 'loading', data: text })
+//         }
+//     }
+// }
+const mapStateToProps = (store) => {
+    console.log(store);
+    return {
+        loading:store.loading,
+        display:store.display,
+    }
+}
+export default withRouter(connect(mapStateToProps)(Spot));

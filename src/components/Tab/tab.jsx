@@ -46,7 +46,7 @@ class App extends React.Component {
   }
 
   handleClick = (e) => {
-    console.log('click ', e);
+    // console.log('click ', e);
     this.setState({
       current: e.key,
     });
@@ -67,40 +67,33 @@ class App extends React.Component {
         <Menu.Item key="spotv">
         <Link to="/spotv">即期带量</Link>
         </Menu.Item>
-        <Menu.Item key="spot">
-           <Link to="/">即期</Link>
+        <Menu.Item key="spotSafe">
+           <Link to="/spotSafe">即期监管</Link>
            {/* <NavLink to="/" activeClassName="selected">MyBlog</NavLink> */}
         </Menu.Item>
-        <Menu.Item key="spotv">
-        <Link to="/spotv">即期带量</Link>
+        <Menu.Item key="swap">
+        <Link to="/swap">掉期</Link>
         </Menu.Item>
-        <Menu.Item key="spot">
-           <Link to="/">即期</Link>
+        <Menu.Item key="swrt">
+           <Link to="/swrt">掉期率</Link>
            {/* <NavLink to="/" activeClassName="selected">MyBlog</NavLink> */}
         </Menu.Item>
-        <Menu.Item key="spotv">
-        <Link to="/spotv">即期带量</Link>
+        <Menu.Item key="ir">
+        <Link to="/ir">利率</Link>
         </Menu.Item>
-        <Menu.Item key="spot">
-           <Link to="/">即期</Link>
+        <Menu.Item key="bstk">
+           <Link to="/bstk">商品</Link>
            {/* <NavLink to="/" activeClassName="selected">MyBlog</NavLink> */}
         </Menu.Item>
-        <Menu.Item key="spotv">
-        <Link to="/spotv">即期带量</Link>
+        <Menu.Item key="bstks">
+        <Link to="/bstks">商品结算</Link>
         </Menu.Item>
-        <Menu.Item key="spot">
-           <Link to="/">即期</Link>
+        <Menu.Item key="vol">
+           <Link to="/vol">波动率</Link>
            {/* <NavLink to="/" activeClassName="selected">MyBlog</NavLink> */}
         </Menu.Item>
-        <Menu.Item key="spotv">
-        <Link to="/spotv">即期带量</Link>
-        </Menu.Item>
-        <Menu.Item key="spot">
-           <Link to="/">即期</Link>
-           {/* <NavLink to="/" activeClassName="selected">MyBlog</NavLink> */}
-        </Menu.Item>
-        <Menu.Item key="spotv">
-        <Link to="/spotv">即期带量</Link>
+        <Menu.Item key="option">
+        <Link to="/option">期权费率</Link>
         </Menu.Item>
       </Menu>     
       </div>

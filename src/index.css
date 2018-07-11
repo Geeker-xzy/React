@@ -150,7 +150,13 @@ body{
     .form-main{
         width: 70%;
         float: left;
+        position: relative;
     }
     .perform .ant-switch{
         margin-bottom: 5px;
+    }
+    .spinner{
+        position: absolute;
+        left: 50%;
+        top: 40%;
     }

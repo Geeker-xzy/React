@@ -14,7 +14,7 @@ export default class RouteConfig extends Component{
         <Switch>
           <Route path="/" exact component={Spot} />
           <Route path="/spotv" component={Spotv} />
-          <Redirect to="/" />
+          {/* <Redirect to="/" /> */}
         </Switch>
     )
   }
