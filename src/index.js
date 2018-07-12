@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import CMHeader from './components/Header/cmHeader';
@@ -10,26 +10,25 @@ import SmallTab from './components/SmallTab/smallTab';
 import Route from './router/';
 import store from './store/store';
 import './index.css';
-// const state = store.getState();
-// console.log(state);
-// console.log(store);
+import createBrowserHistory from 'history/createBrowserHistory';
+const customHistory = createBrowserHistory();
 store.subscribe(()=>{
     console.log(arguments);
 })
 const render = (Route) => {
     ReactDOM.render(
         <Provider store={store}>
-            <HashRouter>
+            <Router history={customHistory}>
                 <div className="main">
                     <CMHeader />
-                    <Tab></Tab>
+                    <Tab history={customHistory}></Tab>
                     <Route />
                     <div className="right">
                     <Perform />
                     <SmallTab />
                     </div>
                 </div>
-            </HashRouter>
+            </Router>
         </Provider>
         , document.getElementById('root'),
     )
