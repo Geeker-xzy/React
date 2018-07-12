@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Radio } from 'antd';
-import { div } from 'gl-matrix/src/gl-matrix/vec2';
-
+import { connect } from 'react-redux';
 const FormItem = Form.Item;
 
 class FormLayoutDemo extends Component {
@@ -9,7 +8,13 @@ class FormLayoutDemo extends Component {
     super();
     this.state = {
       formLayout: 'inline',
+      frequency:'',
+      waveRange:'',
+      singleNumLimit:''
     };
+    this.changeF= this.changeF.bind(this);
+    this.changeW= this.changeW.bind(this);
+    this.changeS= this.changeS.bind(this);
   }
 
   handleFormLayoutChange = (e) => {
@@ -31,19 +36,19 @@ class FormLayoutDemo extends Component {
             label="发价频率"
             {...formItemLayout}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="input placeholder" value={this.props.frequency} onChange = {this.changeF} type="number"/>
           </FormItem>
           <FormItem
             label="波动点数"
             {...formItemLayout}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="input placeholder" value={this.props.waveRange} onChange = {this.changeW} type="number"/>
           </FormItem>
           <FormItem
             label="单包个数"
             {...formItemLayout}
           >
-            <Input placeholder="input placeholder" />
+            <Input placeholder="input placeholder" value={this.props.singleNumLimit} onChange={this.changeS} type="number"/>
           </FormItem>
           <FormItem {...buttonItemLayout}>
             <Button type="primary">设置生效</Button>
@@ -51,6 +56,31 @@ class FormLayoutDemo extends Component {
         </Form>
     );
   }
+  changeF(e){
+    this.props.changeInputVal({data:e.target.value,species:'frequency'})
+  }
+  changeW(e){
+    this.props.changeInputVal({data:e.target.value,species:'waveRange'})
+  }
+  changeS(e){
+    this.props.changeInputVal({data:e.target.value,species:'singleNumLimit'})
+  }
 }
-// ReactDOM.render(<FormLayoutDemo />, mountNode);
-export default FormLayoutDemo;
+const mapDispatchToProps = (dispatch)=>{
+  return {changeInputVal:(val)=>{
+    dispatch({
+      ...val,
+      type:'changeInput',
+      productType:'spot'
+    })
+  }
+}
+}
+const mapStateToProps = (store) => {
+  return {
+    frequency:store.spot.item.frequency,
+    waveRange:store.spot.item.waveRange,
+    singleNumLimit:store.spot.item.singleNumLimit,
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(FormLayoutDemo);

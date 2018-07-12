@@ -7,27 +7,30 @@ let productType = ['spot', 'spotv', 'spotSafe', 'swap', 'swrt', 'ir', 'bstk', 'b
 // 树形结构单元 item 包含 频率 次数 （3个） display 具体推送数据
 let treeItem = {
     item: {
-        waveRange: '',
-        singleNumLimit: ''
+        waveRange: '1000',
+        singleNumLimit: '1000',
+        frequency:'1000'
     },
-    display: []
+    display: [],
+    loading:true
 }
 let defaultState = {};
 // 不同产品相似的数据结构 *遍历
 productType.forEach((item) => {
     defaultState[item] = treeItem;
 })
-defaultState.loading = true;
 let proData = (state = defaultState, action={}) => {
     let stateCopy = {...state};
     switch (action.type) {
         case 'initTable':
-        stateCopy.display = action.data;
-        stateCopy.loading = false;
-            // state[`productType`].item = action.data;
+        stateCopy[`${action.productType}`].display = action.data;
+        stateCopy[`${action.productType}`].loading = false;
+        stateCopy[`${action.productType}`].item.frequency = action.frequency;
+        stateCopy[`${action.productType}`].item.waveRange = action.waveRange;
+        stateCopy[`${action.productType}`].item.singleNumLimit = action.singleNumLimit;
             break;
-        case 'refresh':
-        stateCopy[`productType`].display = action.data;
+        case 'changeInput':
+        stateCopy[`${action.productType}`].item[`${action.species}`] = action.data;
             break;
         case 'loading':
         stateCopy.loading = action.data;

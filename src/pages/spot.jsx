@@ -1,4 +1,4 @@
-// 即期表格
+// `// 即期表格
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { Table } from 'antd';
@@ -67,12 +67,12 @@ class Spot extends Component {
         };
     }
     getData() {
-        initDate({productType:"spot"})
+        initDate({productType:"spot",url:'example/query.action'})
     }
     render() {
         return (
             <div className="form-main">
-                <TableForm />
+                <TableForm/>
                 <div className="spinner">
                     <Spin spinning={this.props.loading} />
                 </div>
@@ -89,23 +89,16 @@ class Spot extends Component {
         this.getData();  
     }
     componentWillReceiveProps(nextProps){
-        console.log(22222);
-        console.log(nextProps);
+        // console.log(22222);
+        // console.log(nextProps);
 
-    }
-}
-const mapDispatchToProps =(dispatch)=>{
-    return{
-        initData:(data)=>{
-            dispatch(data);
-        }
     }
 }
 const mapStateToProps = (store) => {
     console.log(store);
     return {
-        loading:store.loading,
-        display:store.display,
+        loading:store.spot.loading,
+        display:store.spot.display
     }
 }
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Spot));
+export default withRouter(connect(mapStateToProps)(Spot));

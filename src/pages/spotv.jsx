@@ -109,8 +109,9 @@ class Spot extends Component {
 const mapStateToProps = (store) => {
     console.log(store);
     return {
-        loading:store.loading,
-        display:store.display,
+        loading:store.spot.loading,
+        display:store.spot.display,
+        item:store.spot.item
     }
 }
 export default withRouter(connect(mapStateToProps)(Spot));
