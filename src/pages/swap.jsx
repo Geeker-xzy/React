@@ -14,13 +14,18 @@ const columns = [
     { title: '报价单位 ', dataIndex: 'quoteUnit', key: '3', width: 120, align: 'center', },
     { title: '买价', dataIndex: 'bid', key: '4', width: 120, align: 'center', },
     { title: '卖价', dataIndex: 'ask', key: '5', width: 120, align: 'center', },
-    { title: '买价量', dataIndex: 'bidVolume', key: '6', width: 120, align: 'center', },
-    { title: '卖价量', dataIndex: 'askVolume', key: '7', width: 120, align: 'center', },
-    { title: '起息日', dataIndex: 'valueDate', key: '8', width: 120, align: 'center', },
-    { title: '更新日期', dataIndex: 'updateDate', key: '9', width: 120, align: 'center', },
-    { title: '更新时间', dataIndex: 'updateTime', key: '10', width: 120, align: 'center', }
+    { title: '中间价', dataIndex: 'mid', key: '6', width: 120, align: 'center', },
+    { title: '即期买价', dataIndex: 'spotBid', key: '7', width: 120, align: 'center', },
+    { title: '即期卖价', dataIndex: 'spotAsk', key: '8', width: 120, align: 'center', },
+    { title: '买入全价', dataIndex: 'allBid', key: '9', width: 120, align: 'center', },
+    { title: '卖出全价', dataIndex: 'allAsk', key: '10', width: 120, align: 'center', },
+    { title: '交易状态', dataIndex: 'priceSate', key: '11', width: 120, align: 'center', },
+    { title: '卖出全价', dataIndex: 'spotAsk', key: '12', width: 120, align: 'center', },
+    { title: '起息日', dataIndex: 'valueDate', key: '13', width: 120, align: 'center', },
+    { title: '到期日', dataIndex: 'maturityDate;', key: '14', width: 120, align: 'center', },
+    { title: '更新日期', dataIndex: 'updateDate', key: '15', width: 120, align: 'center', },
+    { title: '更新时间', dataIndex: 'updateTime', key: '16', width: 120, align: 'center', }
 ];
-
 const data = [];
 for (let i = 0; i < 100; i++) {
     data.push({
@@ -41,8 +46,7 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
-class Spotv extends Component {
-
+class Swap extends Component {
     render() {
         return (
             <div className="form-main">
@@ -50,7 +54,7 @@ class Spotv extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{ x: 1400, y: 480 }}
+                <Table columns={columns} dataSource={data} scroll={{ x: 1980, y: 480 }}
                     pagination={false} />
             </div>
 
@@ -58,4 +62,4 @@ class Spotv extends Component {
 
     }
 }
-export default Spotv;
+export default Swap;

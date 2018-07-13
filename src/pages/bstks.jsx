@@ -9,17 +9,15 @@ import { connect } from 'react-redux';
 import { initDate } from "../store/action";
 // 列名
 const columns = [
-    { title: '货币对', dataIndex: 'cyPairCode', render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
-    { title: '报价单位', className: 'column-money', dataIndex: 'quoteUnit', align: 'center', width: 120 },
-    { title: '买价', dataIndex: 'bid', align: 'center', width: 120 },
-    { title: '卖价', dataIndex: 'ask', align: 'center', width: 120 },
+    { title: '商品代码', dataIndex: 'bstkCode', fixed: 'left',render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
+    { title: '期限', dataIndex: 'periodCode',fixed: 'left', align: 'center', width: 120 },
+    { title: '期限展开方式', dataIndex: 'type', align: 'center', width: 150 },
     { title: '中间价', dataIndex: 'mid', align: 'center', width: 120 },
-    { title: '价格状态', dataIndex: 'priceState', align: 'center', width: 120 },
-    { title: '起息日', dataIndex: 'valueDate', align: 'center', width: 120 },
+    { title: '交易状态', dataIndex: 'tradeState', align: 'center', width: 120 },
     { title: '更新日期', dataIndex: 'updateDate', align: 'center', width: 120 },
     { title: '更新时间', dataIndex: 'updateTime', align: 'center', width: 120 },
 ];
-class Spot extends Component {
+class Bstks extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,7 +41,7 @@ class Spot extends Component {
                     columns={columns}
                     dataSource={this.props.display}
                     pagination={false}
-                    scroll={{ y: 480 }}
+                    scroll={{y: 480 }}
                 >
                 </Table>
             </div>
@@ -65,4 +63,4 @@ const mapStateToProps = (store) => {
         display: store.spot.display
     }
 }
-export default withRouter(connect(mapStateToProps)(Spot));
+export default withRouter(connect(mapStateToProps)(Bstks));

@@ -9,17 +9,19 @@ import { connect } from 'react-redux';
 import { initDate } from "../store/action";
 // 列名
 const columns = [
-    { title: '货币对', dataIndex: 'cyPairCode', render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
-    { title: '报价单位', className: 'column-money', dataIndex: 'quoteUnit', align: 'center', width: 120 },
+    { title: '货币对', dataIndex: 'cyPairCode',fixed: 'left', render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
+    { title: 'Dealta值', dataIndex: 'delata', align: 'center', width: 120 },
+    { title: '期限', dataIndex: 'periodCode', align: 'center', width: 120 },
     { title: '买价', dataIndex: 'bid', align: 'center', width: 120 },
     { title: '卖价', dataIndex: 'ask', align: 'center', width: 120 },
     { title: '中间价', dataIndex: 'mid', align: 'center', width: 120 },
-    { title: '价格状态', dataIndex: 'priceState', align: 'center', width: 120 },
+    { title: '交易状态', dataIndex: 'tradeState', align: 'center', width: 120 },
     { title: '起息日', dataIndex: 'valueDate', align: 'center', width: 120 },
+    { title: '到期日', dataIndex: 'maturityDate', align: 'center', width: 120 },
     { title: '更新日期', dataIndex: 'updateDate', align: 'center', width: 120 },
     { title: '更新时间', dataIndex: 'updateTime', align: 'center', width: 120 },
 ];
-class Spot extends Component {
+class Vol extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,7 +45,7 @@ class Spot extends Component {
                     columns={columns}
                     dataSource={this.props.display}
                     pagination={false}
-                    scroll={{ y: 480 }}
+                    scroll={{ x: 1100, y: 480 }}
                 >
                 </Table>
             </div>
@@ -65,4 +67,4 @@ const mapStateToProps = (store) => {
         display: store.spot.display
     }
 }
-export default withRouter(connect(mapStateToProps)(Spot));
+export default withRouter(connect(mapStateToProps)(Vol));

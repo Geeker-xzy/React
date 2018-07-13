@@ -7,16 +7,13 @@ import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
 const columns = [
-    { title: '货币对', width: 120, dataIndex: 'cyPaircode', key: 'name', fixed: 'left', render: text => <a href="javascript:;">{text}</a>, align: 'center', },
-    { title: '交易量', width: 120, dataIndex: 'volume', key: 'age', fixed: 'left', align: 'center', },
-    { title: '买价编号', dataIndex: 'address', key: '1', width: 120, align: 'center', },
-    { title: '卖价编号', dataIndex: 'address', key: '2', width: 120, align: 'center', },
+    { title: '货币对', width: 120, dataIndex: 'cyPaircode', key: 'name',render: text => <a href="javascript:;">{text}</a>, align: 'center', },
     { title: '报价单位 ', dataIndex: 'quoteUnit', key: '3', width: 120, align: 'center', },
-    { title: '买价', dataIndex: 'bid', key: '4', width: 120, align: 'center', },
-    { title: '卖价', dataIndex: 'ask', key: '5', width: 120, align: 'center', },
+    { title: '监管最低值', width: 120, dataIndex: 'safeLow', key: 'age', align: 'center', },
+    { title: '监管最高值', dataIndex: 'safeHigh', key: '1', width: 120, align: 'center', },
+    { title: '监管基准价', dataIndex: 'safeRate', key: '2', width: 120, align: 'center', },
     { title: '买价量', dataIndex: 'bidVolume', key: '6', width: 120, align: 'center', },
     { title: '卖价量', dataIndex: 'askVolume', key: '7', width: 120, align: 'center', },
-    { title: '起息日', dataIndex: 'valueDate', key: '8', width: 120, align: 'center', },
     { title: '更新日期', dataIndex: 'updateDate', key: '9', width: 120, align: 'center', },
     { title: '更新时间', dataIndex: 'updateTime', key: '10', width: 120, align: 'center', }
 ];
@@ -31,8 +28,9 @@ for (let i = 0; i < 100; i++) {
         cyPaircode: 'USDCNY',
         volume: '10000',
         quoteUnit: '100',
-        bid: '100',
-        ask: '200',
+        safeLow: '100',
+        safeRate: '200',
+        safeHigh:'300',
         askVolume: '10000',
         bidVolume: '100000',
         valueDate: '18-09-07',
@@ -41,7 +39,7 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
-class Spotv extends Component {
+class Spotsafe extends Component {
 
     render() {
         return (
@@ -50,7 +48,7 @@ class Spotv extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{ x: 1400, y: 480 }}
+                <Table columns={columns} dataSource={data} scroll={{y: 480 }}
                     pagination={false} />
             </div>
 
@@ -58,4 +56,4 @@ class Spotv extends Component {
 
     }
 }
-export default Spotv;
+export default Spotsafe;
