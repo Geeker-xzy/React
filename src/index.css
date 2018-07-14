@@ -67,9 +67,9 @@ body{
 }
 .ant-table-wrapper{
     width: 100%;
-    height: 516px;
+    /* height: 516px; */
     float: left;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 ::-webkit-scrollbar-track
 {
@@ -157,5 +157,8 @@ body{
         float: right;
         width: 30%;
 
+    }
+    .form-main .ant-form-item-control{
+        width: 120px;
     }
   

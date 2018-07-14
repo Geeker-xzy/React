@@ -54,7 +54,7 @@ class Fwdv extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{ x: 1980, y: 480 }}
+                <Table columns={columns} dataSource={data} scroll={{ x: 1980, y: 459 }}
                     pagination={false} />
             </div>
 

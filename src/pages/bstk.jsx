@@ -45,7 +45,7 @@ class Bstk extends Component {
                     columns={columns}
                     dataSource={this.props.display}
                     pagination={false}
-                    scroll={{ x: 1300, y: 480 }}
+                    scroll={{ x: 1300, y: 459 }}
                 >
                 </Table>
             </div>

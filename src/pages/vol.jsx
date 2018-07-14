@@ -45,7 +45,7 @@ class Vol extends Component {
                     columns={columns}
                     dataSource={this.props.display}
                     pagination={false}
-                    scroll={{ x: 1100, y: 480 }}
+                    scroll={{ x: 1100, y: 459 }}
                 >
                 </Table>
             </div>

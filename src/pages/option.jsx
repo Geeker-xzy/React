@@ -62,7 +62,7 @@ class Option extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{x:2500,y: 480 }}
+                <Table columns={columns} dataSource={data} scroll={{x:2500,y: 459 }}
                     pagination={false} />
             </div>
 
