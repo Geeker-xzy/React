@@ -7,6 +7,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 import constansts from "../utils/constants"
 // 列名
 const columns = [
@@ -48,6 +49,7 @@ class Spot extends Component {
                     scroll={{ y: 481 }}
                 >
                 </Table>
+                <Modal/>
             </div>
         )
     }

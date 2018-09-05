@@ -46,24 +46,24 @@ class App extends React.Component {
             inlineCollapsed={this.state.collapsed} onSelect={this.switchPages} openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
           >
-            <SubMenu key="sub1" title={<span><Icon type="mail" /><span>即期</span></span>}>
+            <SubMenu key="sub1" title={<span><Icon type="rise" /><span>即期</span></span>}>
               <Menu.Item key="spot">即期行情价</Menu.Item>
               <Menu.Item key="spotsafe">即期监管价</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>即期带量</span></span>}>
+            <SubMenu key="sub2" title={<span><Icon type="line-chart" /><span>即期带量</span></span>}>
               <Menu.Item key="spotv">即期带量行情价</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub3" title={<span><Icon type="mail" /><span>掉期</span></span>}>
+            <SubMenu key="sub3" title={<span><Icon type="fall" /><span>掉期</span></span>}>
               <Menu.Item key="swap">掉期行情价</Menu.Item>
               <Menu.Item key="swrt">掉期率行情价</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub4" title={<span><Icon type="appstore" /><span>利率</span></span>}>
+            <SubMenu key="sub4" title={<span><Icon type="bar-chart" /><span>利率</span></span>}>
               <Menu.Item key="ir">利率行情价</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub5" title={<span><Icon type="appstore" /><span>商品</span></span>}>
+            <SubMenu key="sub5" title={<span><Icon type="fund" /><span>商品</span></span>}>
               <Menu.Item key="bstk">商品行情价</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub6" title={<span><Icon type="appstore" /><span>期权</span></span>}>
+            <SubMenu key="sub6" title={<span><Icon type="pie-chart" /><span>期权</span></span>}>
               <Menu.Item key="vol">波动率价</Menu.Item>
               <Menu.Item key="option">期权</Menu.Item>
             </SubMenu>

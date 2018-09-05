@@ -42,4 +42,10 @@ export function changeDrawVisible(data){
 
     }
 }
+export function changeModalVisible(data){
+    return {
+        type:'changeModalVisible',
+        data:data
+    }
+}
 

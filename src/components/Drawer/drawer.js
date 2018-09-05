@@ -23,9 +23,6 @@ class App extends React.Component {
         >
          <Switch checkedChildren="开" unCheckedChildren="关" className="allRadio" />
         <Perform/>
-          {/* <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p> */}
         </Drawer>
       </div>
     );

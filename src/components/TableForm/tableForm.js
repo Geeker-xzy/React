@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Radio } from 'antd';
 import { connect } from 'react-redux';
+import { changeModalVisible } from "../../store/action";
+import store from "../../store/store";
 const FormItem = Form.Item;
 
 class FormLayoutDemo extends Component {
@@ -15,8 +17,8 @@ class FormLayoutDemo extends Component {
     this.changeF= this.changeF.bind(this);
     this.changeW= this.changeW.bind(this);
     this.changeS= this.changeS.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
-
   handleFormLayoutChange = (e) => {
     this.setState({ formLayout: e.target.value });
   }
@@ -54,7 +56,7 @@ class FormLayoutDemo extends Component {
             <Button type="primary">设置生效</Button>
           </FormItem>
             <FormItem {...buttonItemLayout}>
-            <Button type="primary">单独发价</Button>
+            <Button type="primary" onClick = {this.openModal}>单独发价</Button>
           </FormItem>
         </Form>
     );
@@ -67,6 +69,9 @@ class FormLayoutDemo extends Component {
   }
   changeS(e){
     this.props.changeInputVal({data:e.target.value,species:'singleNumLimit'})
+  }
+  openModal(){
+    store.dispatch(changeModalVisible(true));
   }
 }
 const mapDispatchToProps = (dispatch)=>{

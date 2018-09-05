@@ -233,4 +233,19 @@ div.ant-select{
     position: absolute;
     top: 15px;
     right: 50px;
+    z-index: 1001;
+}
+.ant-modal-body .ant-form-item{
+    /* width: 50%; */
+}
+.ant-modal-body .ant-form-item-label{
+    width: 80px;
+}
+.ant-modal-body .ant-form-item-control-wrapper{
+    width: 130px;
+}
+.ant-drawer-header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }

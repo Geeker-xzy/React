@@ -6,38 +6,43 @@
 let productType = ['spot', 'spotv', 'spotSafe', 'swap', 'swrt', 'ir', 'bstk', 'bstks', 'vol', 'option']
 // 树形结构单元 item 包含 频率 次数 （3个） display 具体推送数据
 let treeItem = {
-    drawVisible:true,
+    drawVisible: false,
+    modalVisible: false,
     item: {
         waveRange: '1000',
         singleNumLimit: '1000',
-        frequency:'1000'
+        frequency: '1000'
     },
     display: [],
-    loading:true
+    loading: true
 }
 let defaultState = {};
 // 不同产品相似的数据结构 *遍历
 productType.forEach((item) => {
     defaultState[item] = treeItem;
 })
-let proData = (state = defaultState, action={}) => {
-    let stateCopy = {...state};
+let proData = (state = defaultState, action = {}) => {
+    let stateCopy = { ...state };
     switch (action.type) {
         case 'initTable':
-        stateCopy[`${action.productType}`].display = action.data;
-        stateCopy[`${action.productType}`].loading = false;
-        stateCopy[`${action.productType}`].item.frequency = action.frequency;
-        stateCopy[`${action.productType}`].item.waveRange = action.waveRange;
-        stateCopy[`${action.productType}`].item.singleNumLimit = action.singleNumLimit;
+            stateCopy[`${action.productType}`].display = action.data;
+            stateCopy[`${action.productType}`].loading = false;
+            stateCopy[`${action.productType}`].item.frequency = action.frequency;
+            stateCopy[`${action.productType}`].item.waveRange = action.waveRange;
+            stateCopy[`${action.productType}`].item.singleNumLimit = action.singleNumLimit;
             break;
         case 'changeInput':
-        stateCopy[`${action.productType}`].item[`${action.species}`] = action.data;
+            stateCopy[`${action.productType}`].item[`${action.species}`] = action.data;
             break;
         case 'loading':
-        stateCopy.loading = action.data;
+            stateCopy.loading = action.data;
             break;
         case 'changeDrawVisible':
-        stateCopy.drawVisible = action.data;
+            stateCopy.drawVisible = action.data;
+            break;
+        case 'changeModalVisible':
+            stateCopy.modalVisible = action.data;
+            break;
         default:
             break;
     }
