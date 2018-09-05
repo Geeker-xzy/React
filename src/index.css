@@ -67,11 +67,11 @@ body{
 }
 .ant-table-wrapper{
     width: 100%;
-    /* height: 516px; */
+     height: 528px; 
     float: left;
     /* overflow-y: auto; */
 }
-::-webkit-scrollbar-track
+/*::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 10px;
@@ -91,7 +91,7 @@ body{
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #d5d5d5!important;
     border:none!important;
-}
+}*/
 .xnet{
     float: right;
     margin-right: 70px;
@@ -104,16 +104,22 @@ body{
 }
 .perform .item{
     /* width: 100px; */
-    width: 50%;
+    width: 100%;
     display: inline-block;
     text-align: center;
-    height: 30px;
-    line-height: 30px;
+    line-height: 52px;
+    border-bottom: 1px solid #eee;
+    
 }
-.perform .item  label{
+.perform .item  >label{
+    width: 30%;
+    display: inline-block;
     margin-right: 10px;
+    text-align: right;
 }
 .perform .item >span{
+    /* width: 30%; */
+    display: inline-block;
     margin-right: 10px;
 }
 .ant-tabs-bar{
@@ -140,8 +146,8 @@ body{
         width: 70px;
     }
     .form-main{
-        width: 70%;
-        height: calc(100% - 100px);
+        width: 100%;
+        height: calc(100% - 82px);
         float: left;
         position: relative;
     }
@@ -159,6 +165,67 @@ body{
 
     }
     .form-main .ant-form-item-control{
-        width: 120px;
+        width: 150px;
     }
-  
+    .performSpan{
+        width: 30%;
+    }
+.special .ant-form-item {
+   height: 35px !important;
+}
+  .antd-pro-components-sider-menu-index-logo{
+    background: #002140;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+    /* padding-left: 24px; */
+    position: relative;
+    transition: all .3s;
+    text-align: center;
+    font-size:24px;
+    color: white;
+  }
+.antd-pro-components-sider-menu-index-sider{
+    flex: 0 0 200px;
+  max-width: 200px; 
+ min-width: 200px;
+  width: 200px;
+  height: 100vh;
+
+}
+.ant-layout-header{
+    padding: 0 !important;
+}
+ .antd-pro-components-global-header-index-header {
+    -webkit-box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    height: 64px;
+    padding: 0 0px 0 0;
+    position: relative;
+}
+i.antd-pro-components-global-header-index-trigger {
+    float: right;
+    -webkit-transition: all .3s,padding 0s;
+    cursor: pointer;
+    font-size: 20px;
+    height: 64px;
+    line-height: 64px;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    transition: all .3s,padding 0s;
+    text-align: center;
+}
+/*i.antd-pro-components-global-header-index-trigger:hover{
+   border: 1px solid #eee; 
+}*/
+div.ant-select{
+    float: right;
+    margin: 16px 30px 16px 0;
+}
+.specialIem{
+    width: 70px !important;
+}
+.ant-drawer-body{
+    padding: 0px 10px 0 10px !important;
+}

@@ -7,6 +7,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import constansts from "../utils/constants"
 // 列名
 const columns = [
     { title: '货币对', dataIndex: 'cyPairCode', render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
@@ -44,7 +45,7 @@ class Spot extends Component {
                     dataSource={this.props.display}
                     pagination={false}
                     bordered
-                    scroll={{ y: 459 }}
+                    scroll={{ y: 481 }}
                 >
                 </Table>
             </div>
@@ -52,11 +53,15 @@ class Spot extends Component {
     }
     componentDidMount() {
         this.getData();
+        this.resize();
     }
     componentWillReceiveProps(nextProps) {
         // console.log(22222);
         // console.log(nextProps);
 
+    }
+    resize(){
+        // le
     }
 }
 const mapStateToProps = (store) => {

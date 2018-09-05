@@ -44,7 +44,8 @@ class Ir extends Component {
                     columns={columns}
                     dataSource={this.props.display}
                     pagination={false}
-                    scroll={{ y: 459 }}
+                    bordered
+                    scroll={{ y: 481 } }
                 >
                 </Table>
             </div>

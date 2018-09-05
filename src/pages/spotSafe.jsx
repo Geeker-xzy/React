@@ -48,7 +48,7 @@ class Spotsafe extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{y: 459 }}
+                <Table columns={columns} dataSource={data} bordered  scroll={{y: 481 }}
                     pagination={false} />
             </div>
 

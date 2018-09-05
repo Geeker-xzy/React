@@ -50,7 +50,7 @@ class Spotv extends Component {
                 <div className="spinner">
                     <Spin />
                 </div>
-                <Table columns={columns} dataSource={data} scroll={{ x: 1400, y: 459 }}
+                <Table columns={columns} dataSource={data} scroll={{ x: 1400, y: 481 }}
                 bordered
                     pagination={false} />
             </div>

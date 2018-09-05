@@ -50,8 +50,11 @@ class FormLayoutDemo extends Component {
           >
             <Input placeholder="input placeholder" value={this.props.singleNumLimit} onChange={this.changeS} type="number"/>
           </FormItem>
-          <FormItem {...buttonItemLayout}>
+          <FormItem {...buttonItemLayout} className="specialIem">
             <Button type="primary">设置生效</Button>
+          </FormItem>
+            <FormItem {...buttonItemLayout}>
+            <Button type="primary">单独发价</Button>
           </FormItem>
         </Form>
     );

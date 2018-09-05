@@ -3,7 +3,7 @@ import { Form, Input, Button, Radio } from 'antd';
 
 const FormItem = Form.Item;
 
-class SpotForm extends Component {
+class FwdvForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,9 +26,21 @@ class SpotForm extends Component {
     } : null;
     return (
       <div>
-        <Form layout={formLayout}>
+        <Form layout={formLayout} className="special">
           <FormItem
             label="货币对"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="期限"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="期限"
             {...formItemLayout}
           >
             <Input placeholder="" />
@@ -52,7 +64,37 @@ class SpotForm extends Component {
             <Input placeholder="" />
           </FormItem>
           <FormItem
+            label="即期买价"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="即期卖价"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="买入全价"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="卖出全价"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
             label="起息日"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="到期日"
             {...formItemLayout}
           >
             <Input placeholder="" />
@@ -69,6 +111,18 @@ class SpotForm extends Component {
           >
             <Input placeholder="" />
           </FormItem>
+          <FormItem
+            label="买价编号"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="卖价编号"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
           <FormItem {...buttonItemLayout}>
             <Button type="primary">单次发价</Button>
           </FormItem>
@@ -78,4 +132,4 @@ class SpotForm extends Component {
   }
 }
 // ReactDOM.render(<FormLayoutDemo />, mountNode);
-export default SpotForm;
+export default FwdvForm;

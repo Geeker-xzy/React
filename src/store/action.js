@@ -35,4 +35,11 @@ export function loading(data) {
         data: data.data
     }
 }
+export function changeDrawVisible(data){
+    return {
+        type:'changeDrawVisible',
+        data:data
+
+    }
+}
 

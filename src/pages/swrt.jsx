@@ -43,8 +43,9 @@ class Swrt extends Component {
                 <Table
                     columns={columns}
                     dataSource={this.props.display}
+                    bordered
                     pagination={false}
-                    scroll={{ y: 459 }}
+                    scroll={{ y: 481 } }
                 >
                 </Table>
             </div>

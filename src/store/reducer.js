@@ -6,6 +6,7 @@
 let productType = ['spot', 'spotv', 'spotSafe', 'swap', 'swrt', 'ir', 'bstk', 'bstks', 'vol', 'option']
 // 树形结构单元 item 包含 频率 次数 （3个） display 具体推送数据
 let treeItem = {
+    drawVisible:true,
     item: {
         waveRange: '1000',
         singleNumLimit: '1000',
@@ -35,6 +36,8 @@ let proData = (state = defaultState, action={}) => {
         case 'loading':
         stateCopy.loading = action.data;
             break;
+        case 'changeDrawVisible':
+        stateCopy.drawVisible = action.data;
         default:
             break;
     }

@@ -3,7 +3,7 @@ import { Form, Input, Button, Radio } from 'antd';
 
 const FormItem = Form.Item;
 
-class SpotForm extends Component {
+class SpotvForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,6 +34,12 @@ class SpotForm extends Component {
             <Input placeholder="" />
           </FormItem>
           <FormItem
+            label="交易量"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
             label="买价"
             {...formItemLayout}
           >
@@ -58,13 +64,19 @@ class SpotForm extends Component {
             <Input placeholder="" />
           </FormItem>
           <FormItem
-            label="状态"
+            label="报价单位"
             {...formItemLayout}
           >
             <Input placeholder="" />
           </FormItem>
           <FormItem
-            label="报价单位"
+            label="买价编号"
+            {...formItemLayout}
+          >
+            <Input placeholder="" />
+          </FormItem>
+          <FormItem
+            label="卖价编号"
             {...formItemLayout}
           >
             <Input placeholder="" />
@@ -78,4 +90,4 @@ class SpotForm extends Component {
   }
 }
 // ReactDOM.render(<FormLayoutDemo />, mountNode);
-export default SpotForm;
+export default SpotvForm;
