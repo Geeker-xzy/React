@@ -229,3 +229,8 @@ div.ant-select{
 .ant-drawer-body{
     padding: 0px 10px 0 10px !important;
 }
+.allRadio{
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import { Drawer, Button } from 'antd';
+import { Drawer, Button,Switch } from 'antd';
 import { connect } from 'react-redux';
 import { changeDrawVisible } from "../../store/action";
 import Perform from '../Perform/perform'
@@ -21,6 +21,7 @@ class App extends React.Component {
           onClose={this.onClose}
           visible={this.props.visible}
         >
+         <Switch checkedChildren="开" unCheckedChildren="关" className="allRadio" />
         <Perform/>
           {/* <p>Some contents...</p>
           <p>Some contents...</p>
