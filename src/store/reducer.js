@@ -27,9 +27,9 @@ let proData = (state = defaultState, action = {}) => {
         case 'initTable':
             stateCopy[`${action.productType}`].display = action.data;
             stateCopy[`${action.productType}`].loading = false;
-            stateCopy[`${action.productType}`].item.frequency = action.frequency;
-            stateCopy[`${action.productType}`].item.waveRange = action.waveRange;
-            stateCopy[`${action.productType}`].item.singleNumLimit = action.singleNumLimit;
+            // stateCopy[`${action.productType}`].item.frequency = action.frequency;
+            // stateCopy[`${action.productType}`].item.waveRange = action.waveRange;
+            // stateCopy[`${action.productType}`].item.singleNumLimit = action.singleNumLimit;
             break;
         case 'changeInput':
             stateCopy[`${action.productType}`].item[`${action.species}`] = action.data;

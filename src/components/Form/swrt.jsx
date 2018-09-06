@@ -75,9 +75,6 @@ class SwrtForm extends Component {
           >
             <Input placeholder="" />
           </FormItem>
-          <FormItem {...buttonItemLayout}>
-            <Button type="primary">单次发价</Button>
-          </FormItem>
         </Form>
       </div>
     );

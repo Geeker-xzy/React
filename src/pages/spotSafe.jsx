@@ -6,6 +6,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 const columns = [
     { title: '货币对', width: 120, dataIndex: 'cyPaircode', key: 'name',render: text => <a href="javascript:;">{text}</a>, align: 'center', },
     { title: '报价单位 ', dataIndex: 'quoteUnit', key: '3', width: 120, align: 'center', },
@@ -50,6 +51,7 @@ class Spotsafe extends Component {
                 </div>
                 <Table columns={columns} dataSource={data} bordered  scroll={{y: 481 }}
                     pagination={false} />
+                     <Modal type="SpotSafe"/>
             </div>
 
         )

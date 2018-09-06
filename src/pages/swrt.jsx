@@ -7,6 +7,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 // 列名
 const columns = [
     { title: '货币对', dataIndex: 'cyPairCode', render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
@@ -48,6 +49,7 @@ class Swrt extends Component {
                     scroll={{ y: 481 } }
                 >
                 </Table>
+                 <Modal type="Swrt"/>
             </div>
         )
     }

@@ -6,6 +6,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 const columns = [
     { title: '期权类型', width: 120, dataIndex: 'optionType',fixed:'left', key: '1',render: text => <a href="javascript:;">{text}</a>, align: 'center', },
     { title: '期权子类', dataIndex: 'subType', key: '2', width: 120, align: 'center', },
@@ -64,6 +65,7 @@ class Option extends Component {
                 </div>
                 <Table columns={columns} dataSource={data} bordered scroll={{x:2500,y: 481 }}
                     pagination={false}  />
+                     <Modal type="Option"/>
             </div>
 
         )

@@ -17,7 +17,7 @@ class Header extends Component {
                             <Select defaultValue="CMDS" style={{ width: 120 }}>
                             <Option value="CMDS">CMDS</Option>
                             <Option value="CITI">CITI</Option>
-                             <Option value="CS">CS</Option>
+                             <Option value="CS">RMDS</Option>
                           </Select>
                          
                  </div> 

@@ -6,6 +6,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 const columns = [
     { title: '货币对', width: 120, dataIndex: 'cyPaircode', key: 'name', fixed: 'left', render: text => <a href="javascript:;">{text}</a>, align: 'center', },
     { title: '交易量', width: 120, dataIndex: 'volume', key: 'age', fixed: 'left', align: 'center', },
@@ -56,6 +57,7 @@ class Fwdv extends Component {
                 </div>
                 <Table columns={columns} dataSource={data} bordered  scroll={{ x: 1980, y: 481 }}
                     pagination={false} />
+                     <Modal type="Fwdv"/>
             </div>
 
         )

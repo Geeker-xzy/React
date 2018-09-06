@@ -49,7 +49,7 @@ class Spot extends Component {
                     scroll={{ y: 481 }}
                 >
                 </Table>
-                <Modal/>
+                <Modal type="Spot"/>
             </div>
         )
     }

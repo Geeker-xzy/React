@@ -7,6 +7,7 @@ import TableForm from '../components/TableForm/tableForm';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { initDate } from "../store/action";
+import Modal from "../components/Modal/modal";
 // 列名
 const columns = [
     { title: '商品代码', dataIndex: 'bstkCode', fixed: 'left',render: text => <a href="javascript:;">{text}</a>, align: 'center', width: 120 },
@@ -48,6 +49,7 @@ class Bstk extends Component {
                     scroll={{ x: 1300, y: 481 } }
                 >
                 </Table>
+                 <Modal type="Bstk"/>
             </div>
         )
     }
