@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
-import CMHeader from './components/Header/cmHeader';
-import Tab from './components/Tab/tab';
-import Perform from './components/Perform/perform';
-import SmallTab from './components/SmallTab/smallTab';
-// import Layout from './components/Layout/layout'
 import Menu from './components/Menu/menu.js';
 import Drawer from './components/Drawer/drawer';
 import { Select } from 'antd';
@@ -19,8 +14,7 @@ import { message} from 'antd';
 import './index.css';
 import createBrowserHistory from 'history/createBrowserHistory';
 import Header from './components/Header/header.jsx';
-const {  Footer, Sider, Content } = Layout;
-const Option = Select.Option
+const {Sider, Content } = Layout;
 const customHistory = createBrowserHistory();
 store.subscribe(() => {
     console.log(arguments);
@@ -78,6 +72,6 @@ ws.onmessage = function (evt) {
 };
 
 // 断开 web socket 连接成功触发事件
-// ws.onclose = function () {
-//   alert("webnet已关闭...");
-// };
+ws.onclose = function () {
+   message.success('ws建立连接关闭')
+};

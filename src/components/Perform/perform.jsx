@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PerformItem from '../Item/performItem'
-import performItem from '../Item/performItem';
 class Perform extends Component {
     render() {
         return (

@@ -21,6 +21,7 @@ let defaultState = {};
 productType.forEach((item) => {
     defaultState[item] = treeItem;
 })
+defaultState.headerVisible = true;
 let proData = (state = defaultState, action = {}) => {
     let stateCopy = { ...state };
     switch (action.type) {
@@ -42,6 +43,9 @@ let proData = (state = defaultState, action = {}) => {
             break;
         case 'changeModalVisible':
             stateCopy.modalVisible = action.data;
+            break;
+        case 'changeHeaderVisible':
+            stateCopy.headerVisible = action.data;
             break;
         default:
             break;

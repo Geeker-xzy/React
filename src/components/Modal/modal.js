@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Modal, Button } from 'antd';
+import { Modal} from 'antd';
 import { changeModalVisible } from "../../store/action";
 import store from "../../store/store";
 import Spot from '../Form/spot';
@@ -13,7 +13,7 @@ import Ir from '../Form/ir';
 import Bstk from '../Form/bstk';
 import Vol from '../Form/vol';
 import formatType from '../../utils/formatter';
-class App extends React.Component {
+class App extends Component {
     constructor(props){
         super(props);
         this.setModalVisible = this.setModalVisible.bind(this);

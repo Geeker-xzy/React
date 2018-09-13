@@ -81,6 +81,17 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy,
+//     :{
+//     '/PriceSimulator/**':{
+//         target: 'http://192.168.41.86:8080',
+//         changeOrigin: true,
+//         pathRewrite: {
+//           '^/PriceSimulator': '/PriceSimulator'
+//         }
+//     }
+
+// }
+//    ,
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());

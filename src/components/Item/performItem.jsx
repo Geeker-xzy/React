@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Switch, Icon } from 'antd';
+import { Switch} from 'antd';
 class performItem extends Component {
     constructor(props){
         super(props);

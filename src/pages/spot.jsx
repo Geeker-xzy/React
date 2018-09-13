@@ -32,7 +32,7 @@ class Spot extends Component {
         };
     }
     getData() {
-        initDate({ productType: "spot", url: 'example/query.action' })
+        initDate({ productType: "spot", url: 'example/query.action'})
     }
     render() {
         return (

@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import { Drawer, Button,Switch } from 'antd';
+import { Drawer,Switch } from 'antd';
 import { connect } from 'react-redux';
 import { changeDrawVisible } from "../../store/action";
 import Perform from '../Perform/perform'
 import store from "../../store/store";
-class App extends React.Component {
+class App extends Component {
   state = { visible: false };
   onClose(){
     store.dispatch(changeDrawVisible(false))

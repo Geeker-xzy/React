@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import asyncComponent from '../utils/asyncComponent';
+// import asyncComponent from '../utils/asyncComponent';
 import Spot from "../pages/spot";
 import Spotv from "../pages/spotv";
 import SpotSafe from "../pages/spotSafe";
@@ -12,6 +12,7 @@ import Bstk from "../pages/bstk";
 import Bstks from "../pages/bstks";
 import Vol from "../pages/vol";
 import Option  from "../pages/option"
+import Quotation from '../pages/quotation'
 // import Option from "../pages/option";
 // 鉴于 异步加载出现空白延迟，不采用异步加载
 // const Spotv = asyncComponent(() => import("../pages/spotv"));
@@ -45,6 +46,7 @@ export default class RouteConfig extends Component {
         <Route path="/bstks" component={Bstks} />
         <Route path="/vol" component={Vol} />
         <Route path="/option" component={Option} />
+         <Route path="/quotation" component={Quotation} />
         <Redirect to="/spot" />
       </Switch>
     )

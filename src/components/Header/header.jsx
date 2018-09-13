@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Select,Icon } from 'antd';
 import { changeDrawVisible } from "../../store/action";
+import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
 import store from "../../store/store";
 const Option = Select.Option;
 class Header extends Component {
@@ -9,9 +11,8 @@ class Header extends Component {
     		this.showDrawer = this.showDrawer.bind(this);
     	}
     render() {
-    	
         return (
-            <div className="header">
+            <div className={this.props.headerVisible ? 'header':'header hide'}>
             <div className="antd-pro-components-global-header-index-header">
             <Icon type="bars" theme="outlined" className="antd-pro-components-global-header-index-trigger" onClick={this.showDrawer} />
                             <Select defaultValue="CMDS" style={{ width: 120 }}>
@@ -29,4 +30,11 @@ class Header extends Component {
 
     }
 }
-export default Header;
+const mapStateToProps = (store) => {
+    // console.log(store.headerVisible);
+    return {
+        headerVisible: store.headerVisible,
+    }
+
+}
+export default withRouter(connect(mapStateToProps)(Header));

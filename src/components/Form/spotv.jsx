@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Radio } from 'antd';
+import { Form, Input} from 'antd';
 
 const FormItem = Form.Item;
 
@@ -20,9 +20,6 @@ class SpotvForm extends Component {
     const formItemLayout = formLayout === 'horizontal' ? {
       labelCol: { span: 4 },
       wrapperCol: { span: 14 },
-    } : null;
-    const buttonItemLayout = formLayout === 'horizontal' ? {
-      wrapperCol: { span: 14, offset: 4 },
     } : null;
     return (
       <div>

@@ -27,6 +27,8 @@
       case 'Bstks':
       type = '商品带量'
        break;
+      default:
+       type = 'Spot';
     }
     return type;
   }
