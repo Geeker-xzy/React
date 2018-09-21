@@ -255,3 +255,26 @@ div.ant-select{
 .hide{
     display:none;
 }
+/*.ant-form-item-label{
+    width: 100px;
+}
+.ant-form-item-control-wrapper{
+    width: 100px;
+}*/
+.progressbar__bar{
+     z-index: 1000;
+     position: absolute !important;
+     width:0px;
+     animation:move 2s;
+}
+@-webkit-keyframes move {
+    0% {
+        width: 0px;
+    }
+    50% {
+        width: 50vw;
+    }
+    100% {
+       width: 100vw;
+    }
+}

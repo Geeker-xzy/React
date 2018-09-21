@@ -22,6 +22,7 @@ productType.forEach((item) => {
     defaultState[item] = treeItem;
 })
 defaultState.headerVisible = true;
+defaultState.progressbar = 'progressbar';
 let proData = (state = defaultState, action = {}) => {
     let stateCopy = { ...state };
     switch (action.type) {
@@ -47,6 +48,12 @@ let proData = (state = defaultState, action = {}) => {
         case 'changeHeaderVisible':
             stateCopy.headerVisible = action.data;
             break;
+        case 'removeProgress':
+           stateCopy.progressbar = action.data;
+           break;
+        case 'addProgress':
+           stateCopy.progressbar = action.data;
+           break;
         default:
             break;
     }

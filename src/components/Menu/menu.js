@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Icon} from 'antd';
-import store from "../../store/store";
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+// import store from "../../store/store";
 const SubMenu = Menu.SubMenu;
 class App extends Component {
   constructor(props) {
@@ -34,7 +36,8 @@ class App extends Component {
     else {
       store.dispatch({ type: 'changeHeaderVisible', data: true })
     }
-
+     store.dispatch({type:'removeProgress',data:''});
+     store.dispatch({type:'addProgress',data:'progressbar'});
   }
 
   render() {
@@ -80,4 +83,10 @@ class App extends Component {
     );
   }
 }
-export default App;
+const mapStateToProps = (store) => {
+  console.log(store);
+  return {
+    // progressbar: store.progressbar,
+  }
+}
+export default withRouter(connect(mapStateToProps)(App));
